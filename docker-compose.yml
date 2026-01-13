@@ -1,0 +1,23 @@
+services:
+    db:
+        image: postgres:16
+        environment:
+            POSTGRES_USER: app
+            POSTGRES_PASSWORD: app
+            POSTGRES_DB: appdb
+        ports:
+            - '5432:5432'
+        volumes:
+            - pgdata:/var/lib/postgresql/data
+
+    collector:
+        build: .
+        depends_on:
+            - db
+        environment:
+            DATABASE_URL: postgresql://app:app@db:5432/appdb
+            API_URL: https://api.github.com/repos/python/cpython
+        command: ['python', 'app/collector.py']
+
+volumes:
+    pgdata:
