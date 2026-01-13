@@ -1,20 +1,10 @@
-A tiny script that fetches JSON from a public API and stores raw snapshots into Postgres (JSONB). Designed as a “daily script” style project (scraping/data collection/automation).
+## Overview
 
-## Features
+This project contains small Python scripts for collecting data from public APIs and saving structured JSON output.
 
--   Fetches JSON from an API endpoint
--   Stores full payload in Postgres as JSONB
--   Runs via Docker Compose (db + script container)
--   Basic retry/backoff + logs for troubleshooting
+## What this project demonstrates
 
-## Tech
-
--   Python (requests, psycopg2)
--   Postgres (JSONB)
--   Docker + Docker Compose
-
-## Run
-
-```bash
-docker compose up --build
-```
+-   Writing simple Python scripts for data collection and automation
+-   Working with REST APIs and JSON
+-   Running and testing scripts via the command line
+-   Debugging and fixing script errors using AI tools
